@@ -1,3 +1,8 @@
+# history
+forked from HULOP project. 
+
+updated by Donghyun Yoo
+
 # BLE localization library
 A BLE beacon-based localization library. This library is used as an iOS framework in NavCogIOSv3.
 
@@ -11,15 +16,42 @@ A BLE beacon-based localization library. This library is used as an iOS framewor
 ## Build instructions
 ### Install CocoaPods (If you have not installed)
 - Install and update Homebrew
+> /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
 - $brew install python
 - $pip install mercurial
 - Install CocoaPods
+> sudo gem install cocoapods
+
+### install cmake 3.13.5
+- over 3.14 version doesn't work. don't install 3.14 with HomeBrew
+- download binary file of 3.13.5 from https://cmake.org/download/. Install Cmake-gui and then open CMake-gui and Tools->How to install command line use
+
 
 ### Build bleloc Framework
 - $git clone https://github.com/hulop/blelocpp.git
 - $cd blelocpp/platform/ios
 - $pod install
 - $sh build.sh Release
+- error
+
+
+### Build BasicLocalizaer
+Install opencv first
+> brew install opencv
+
+Then
+>cd tools/BasicLocalizaer
+>pod install
+> sh build.sh Release
+
+
+
+- if you have the following error,
+xcode-select: error: tool 'xcodebuild' requires Xcode, but active developer directory '/Library/Developer/CommandLineTools' is a command line tools instance
+
+> sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+
 
 ----
 ## About
